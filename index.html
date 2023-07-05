@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="container my-5">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="">From:</label>
+                    <select v-model="from" id="" class="form-control">
+                        <option :value="currency.code" v-for="currency in currencies" :key="currency.code">{{ currency.name }}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="">To:</label>
+                    <select v-model="to" id="" class="form-control">
+                        <option :value="currency.code" v-for="currency in currencies" :key="currency.code">{{ currency.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-6 offset-3 my-5">
+                    <input type="number" v-model="amount" id="amount" placeholder="Amount" class="form-control">
+
+                    <div class="text-center my-5">
+                        <button class="btn btn-primary btn-lg" @click="convertCurrency()">Convert</button>
+                    </div>
+
+
+                    <div class="col-md-6 offset-3 display-1">
+                        <!-- {{ calculateAmount }} -->
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
